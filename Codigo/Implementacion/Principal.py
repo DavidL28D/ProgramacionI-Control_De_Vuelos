@@ -153,7 +153,17 @@ def destinoFavorito():
     print("El destino favorito es:", max[0],"en el cual viajaron",max[1],"pasajeros y recaudó",max[2],"bolivares en pasajes\n")
 
 def mejorPiloto():
-    pass
+    
+    max = ["", 0]
+
+    for i in viajeros:
+
+        if i.getCategoria() == 3:
+            
+            if max[1] <= i.getHoras():
+                max = [i.getNombre(), i.getHoras()]
+    
+    print("El piloto con mas horas de vuelo es:",max[0],"con",max[1],"horas registradas\n")
 
 def miniAzafata():
     pass
