@@ -28,7 +28,7 @@ def cargaDatos():
                     vuelo = palabra
 
                 elif x == 2:
-                    tipo = palabra
+                    destino = palabra
 
                 x += 1
                 palabra = ""
@@ -37,7 +37,7 @@ def cargaDatos():
                 
                 palabra += j
                 
-        viajes.append(Vuelo(nombre, vuelo, tipo, palabra))
+        viajes.append(Vuelo(nombre, int(vuelo), destino, int(palabra)))
     
     # Cargando viajeros
     for i in d.datos_personas:
@@ -106,7 +106,26 @@ def mostrarCategoria():
         print()
         
 def mostrarVuelos(tipo):
-    pass
+    
+    flag = False
+    if tipo == "Nacional":
+        print("Vuelos Nacionales")
+        flag = True
+    else:
+        print("Vuelos Intenacionales")
+    
+    print("------------------------")
+    print("ID - AEROLINEA - DESTINO")
+    print("------------------------")
+
+    for i in viajes:
+
+        if flag and i.getTipo() == 1:
+            print(i.getVuelo(),"-",i.getNombre(),"-",i.getDestino())
+        elif not flag and i.getTipo() == 2:
+            i.mostrar(False)
+
+    print()
 
 def destinoFavorito():
     pass

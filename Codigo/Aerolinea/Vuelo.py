@@ -1,15 +1,15 @@
 class Vuelo():
 
-    def __init__(self, nombre, vuelo, tipo, destino):
+    def __init__(self, nombre, vuelo, destino, tipo):
         self.__nombre = nombre
         self.__vuelo = vuelo
-        self.__tipo = tipo
         self.__destino = destino
+        self.__tipo = tipo
 
     def mostrar(self):
 
-        print(self.__nombre, "", self.__vuelo, "", self.__tipo, "", self.__destino)
-
+        print(self.__nombre, "-", self.__vuelo, "-", self.__tipo, "-", self.__destino)
+       
     def getNombre(self):
         return self.__nombre
     
@@ -19,5 +19,5 @@ class Vuelo():
     def getTipo(self):
         return self.__tipo
 
-    def detDestino(self):
+    def getDestino(self):
         return self.__destino
