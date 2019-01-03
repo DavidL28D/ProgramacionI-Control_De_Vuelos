@@ -19,4 +19,3 @@ input("Presione enter para continuar...")
 
 print()
 miniAzafata()
-input("Presione enter para continuar...")

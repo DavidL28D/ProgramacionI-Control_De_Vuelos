@@ -83,7 +83,7 @@ def cargaDatos():
             viajeros.append(Pasajero(id, nombre, edad, vuelo, categoria, polimorfismo, palabra))
 
         elif categoria == 2:
-            viajeros.append(Azafata(id, nombre, edad, vuelo, categoria, polimorfismo, palabra))
+            viajeros.append(Azafata(id, nombre, edad, vuelo, categoria, float(polimorfismo), palabra))
 
         elif categoria == 3:
             viajeros.append(Piloto(id, nombre, edad, vuelo, categoria, palabra))
@@ -163,8 +163,18 @@ def mejorPiloto():
             if max[1] <= i.getHoras():
                 max = [i.getNombre(), i.getHoras()]
     
-    print("El piloto con mas horas de vuelo es:",max[0],"con",max[1],"horas registradas\n")
+    print("El piloto con mas horas de vuelo es:",max[0],"con",max[1],"horas registradas.\n")
 
 def miniAzafata():
-    pass
+
+    min = ["", 9]
+
+    for i in viajeros:
+
+        if i.getCategoria() == 2:
+            
+            if min[1] >= float(i.getAltura()):
+                min = [i.getNombre(), i.getAltura()]
+    
+    print("La azafata mas baja de altura es:",min[0],"con",min[1],"m.\n")
     
