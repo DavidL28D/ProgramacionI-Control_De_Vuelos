@@ -87,15 +87,24 @@ def cargaDatos():
         elif categoria == 3:
             viajeros.append(Piloto(id, nombre, edad, vuelo, categoria, palabra))
 
-    ("""
+def mostrarCategoria():
+    
     for i in viajeros:
+
+        categoria = i.getCategoria()
+        
+        if categoria == 1:
+            print("Pasajero:")
+
+        elif categoria == 2:
+            print("Azafata:")
+
+        elif categoria == 3:
+            print("Piloto:")
+
         i.mostrar()
         print()
-    """)
-    
-def mostrarCategoria():
-    pass
-
+        
 def mostrarVuelos(tipo):
     pass
 
