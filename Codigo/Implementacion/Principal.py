@@ -77,6 +77,7 @@ def cargaDatos():
         categoria = int(categoria)
         edad = int(edad)
         palabra = int(palabra)
+        vuelo = int(vuelo)
 
         if categoria == 1:
             viajeros.append(Pasajero(id, nombre, edad, vuelo, categoria, polimorfismo, palabra))
@@ -122,13 +123,34 @@ def mostrarVuelos(tipo):
 
         if flag and i.getTipo() == 1:
             print(i.getVuelo(),"-",i.getNombre(),"-",i.getDestino())
+
         elif not flag and i.getTipo() == 2:
-            i.mostrar(False)
+            print(i.getVuelo(),"-",i.getNombre(),"-",i.getDestino())
 
     print()
 
 def destinoFavorito():
-    pass
+    
+    max = ["", 0, 0]
+    cabezas = 0
+    dinericos = 0
+    
+    for i in viajes:
+
+        cabezas = 0
+        dinericos = 0
+
+        for j in viajeros:
+
+            if ( i.getVuelo() == j.getVuelo() ) and j.getCategoria() == 1:
+
+                cabezas += 1
+                dinericos += j.getValorPasaje()
+
+        if max[1] <= cabezas:
+            max = [i.getDestino(), cabezas, dinericos]
+
+    print("El destino favorito es:", max[0],"en el cual viajaron",max[1],"pasajeros y recaudó",max[2],"bolivares en pasajes\n")
 
 def mejorPiloto():
     pass

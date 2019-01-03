@@ -12,13 +12,9 @@ class Piloto(Personas):
 
     def mostrar(self):
 
-        self.calcularCategoria()
-
-        print("Nombre:",self.getNombre(),"\nEdad:",self.getEdad(),"\nCategoria:",self.getCategoria(),"\nHoras de vuelo:",self.__horas)
+        print("Nombre:",self.getNombre(),"\nEdad:",self.getEdad(),"\nCategoria:",self.calcularCategoria(),"\nHoras de vuelo:",self.__horas)
 
     def calcularCategoria(self):
-
-        # Para el piloto: si tiene más de 1500 horas de vuelo es “Capitán”, si tiene 1500 horas de vuelo o menos es “1er Piloto”
 
         c = ""
 
@@ -27,4 +23,4 @@ class Piloto(Personas):
         else:
             c = "Primer Piloto"
         
-        self.setCategoria(c)
+        return c

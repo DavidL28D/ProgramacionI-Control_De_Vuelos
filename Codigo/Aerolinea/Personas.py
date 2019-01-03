@@ -28,6 +28,3 @@ class Personas():
     def getCategoria(self):
         return self.__categoria
 
-    def setCategoria(self, categoria):
-        self.__categoria = categoria
-

@@ -16,9 +16,7 @@ class Azafata(Personas):
 
     def mostrar(self):
 
-        self.calcularCategoria()
-
-        print("Nombre:",self.getNombre(),"\nEdad:",self.getEdad(),"\nCategoria:",self.getCategoria(),"\nAltura:",self.__altura,"\nIdiomas:",self.__idiomas)
+        print("Nombre:",self.getNombre(),"\nEdad:",self.getEdad(),"\nCategoria:",self.calcularCategoria(),"\nAltura:",self.__altura,"\nIdiomas:",self.__idiomas)
        
     
     def calcularCategoria(self):
@@ -38,4 +36,4 @@ class Azafata(Personas):
         else:
             c = "Sin categoria"
             
-        self.setCategoria(c)
+        return c

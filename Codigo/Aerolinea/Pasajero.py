@@ -16,9 +16,7 @@ class Pasajero(Personas):
 
     def mostrar(self):
 
-        self.calcularCategoria()
-
-        print("Nombre:",self.getNombre(),"\nEdad:",self.getEdad(),"\nCategoria:",self.getCategoria(),"\nAsiento:",self.__numAsiento,"\nValor:",self.__valorPasaje)
+        print("Nombre:",self.getNombre(),"\nEdad:",self.getEdad(),"\nCategoria:",self.calcularCategoria(),"\nAsiento:",self.__numAsiento,"\nValor:",self.__valorPasaje)
 
     def calcularCategoria(self):
 
@@ -33,6 +31,6 @@ class Pasajero(Personas):
         else:
             c = "Primera Clase"
 
-        self.setCategoria(c)
+        return c
 
     
